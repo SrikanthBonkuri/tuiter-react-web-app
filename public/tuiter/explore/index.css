@@ -1,0 +1,92 @@
+.wd-search-gear-block {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 16px;
+    margin-right: 12px;
+    text-align: center;
+}
+.wd-search-field {
+    color: black;
+    background-color: gainsboro;
+    border-radius: 30px;
+    border-width: 0;
+    float: right;
+    padding-left: 30px;
+}
+.wd-search-gear-block .wd-gear {
+    content: "\2699";
+    font-size: 28px;
+    color: rgb(29, 161, 242);
+    text-decoration: none;
+    float:right;
+}
+.wd-search-gear-block label {
+    display: none;
+}
+.wd-nav-tabs {
+    font-size: 15px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.wd-nav-tabs li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 16px;
+}
+.wd-nav-tabs a {
+    text-decoration: none;
+    color: gray;
+}
+.wd-selected-icon {
+    padding-bottom: 12px;
+    border-bottom: solid rgb(29, 161, 242) 4px;
+    color: rgb(29, 161, 242);
+}
+.wd-post-topic {
+    color: rgb(110, 118, 125);
+    font-size: 13px;
+    padding-bottom: 6px;
+}
+.wd-post-topic-lightgray {
+    color: lightgray;
+    font-size: 13px;
+    padding-bottom: 6px;
+}
+.wd-post-title {
+    font-size: 18px;
+    padding-bottom: 6px;
+}
+.wd-post-number-tuits {
+    font-size: 13px;
+    color: rgb(110, 118, 125);
+    padding-bottom: 12px;
+}
+.wd-post-author-name {
+    font-size: 13px;
+    padding-bottom: 6px;
+}
+.wd-post-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    position: relative;
+    overflow: hidden;
+}
+.wd-post-image img {
+    width: 100%;
+    height: auto;
+}
+.wd-post-float-left {
+    float: left;
+    width: 70%;
+}
+.wd-post-float-right{
+    float: right;
+    margin-right: 16px;
+    padding-bottom: 12px;
+}
+.wd-last-post{
+    border-bottom-style: solid;
+}
