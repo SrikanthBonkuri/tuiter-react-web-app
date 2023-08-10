@@ -1,7 +1,7 @@
 import React from "react";
 import { deleteTuit } from "../reducers/tuits-reducer";
 import {useDispatch} from "react-redux";
-import {AiOutlineClose} from "react-icons/ai";
+import {AiOutlineClose, AiOutlineHeart, AiOutlineComment, AiOutlineRetweet} from "react-icons/ai";
 
 const TuitSummaryItem = (
  {
@@ -32,8 +32,13 @@ const TuitSummaryItem = (
        <img width={70} className="float-end rounded-3" src={`/images/${tuit.image}`}/>
      </div>
      <div className="col-1">
-        <AiOutlineClose className="float-end" style={{fontSize: '20px'}} onClick={() => deleteTuitHandler(tuit._id)}/>
+        <AiOutlineClose className="float-end" href="javascript:void(0)" style={{fontSize: '20px'}} onClick={() => deleteTuitHandler(tuit._id)}/>
      </div>
+     <div style={{display:"flex", justifyContent:"space-around"}}>
+                <div><a href="javascript:void(0)"><AiOutlineHeart style={{fontSize: '20px'}} /></a><span>{tuit.likes}</span></div>
+                <div><a href="javascript:void(0)"><AiOutlineComment className="" href="" style={{fontSize: '20px'}} /></a><span>{tuit.replies}</span></div>
+                <div><a href="javascript:void(0)"><AiOutlineRetweet className="" href="" style={{fontSize: '20px'}} /></a><span>{tuit.retuits}</span></div>
+      </div>
    </div>
   </li>
  );
