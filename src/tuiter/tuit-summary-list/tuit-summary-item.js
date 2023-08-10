@@ -1,6 +1,7 @@
 import React from "react";
 import { deleteTuit } from "../reducers/tuits-reducer";
 import {useDispatch} from "react-redux";
+import {AiOutlineClose} from "react-icons/ai";
 
 const TuitSummaryItem = (
  {
@@ -21,18 +22,17 @@ const TuitSummaryItem = (
  return(
   <li className="list-group-item">
    <div className="row">
-     <div className="col-10">
+     <div className="col-8">
        <div>{tuit.userName} . {tuit.time}</div>
        <div className="fw-bolder">{tuit.topic}</div>
        <i class="fa fa-window-close" aria-hidden="true"></i>
        <div>{tuit.title}</div>
      </div>
-     <div className="col-auto">
+     <div className="col-3">
        <img width={70} className="float-end rounded-3" src={`/images/${tuit.image}`}/>
      </div>
-     <div className="col-4">
-        <i className="bi bi-x-lg float-end"
-            onClick={() => deleteTuitHandler(tuit._id)}></i>
+     <div className="col-1">
+        <AiOutlineClose className="float-end" style={{fontSize: '20px'}} onClick={() => deleteTuitHandler(tuit._id)}/>
      </div>
    </div>
   </li>
