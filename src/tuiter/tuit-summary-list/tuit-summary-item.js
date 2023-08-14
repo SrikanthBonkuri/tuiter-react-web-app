@@ -1,7 +1,10 @@
 import React from "react";
-import { deleteTuit } from "../reducers/tuits-reducer";
+//import { deleteTuit } from "../reducers/tuits-reducer";
+import { deleteTuitThunk, updateTuitThunk } from "../services/tuits-thunks";
 import {useDispatch} from "react-redux";
 import {AiOutlineClose, AiOutlineHeart, AiOutlineComment, AiOutlineRetweet} from "react-icons/ai";
+import TuitStats from "../tuits/tuit-stats";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const TuitSummaryItem = (
  {
@@ -11,13 +14,17 @@ const TuitSummaryItem = (
      "time": "2h",
      "title": `Tesla CyberTruck lands on Mars and
                picks up the Curiosity rover on its 6' bed`,
-     "image": "tesla.png"
+     "image": "tesla.png",
+     "replies": 123,
+     "retuits": 432,
+     "likes": 2345,
+     "handle": "@spacex",
    }
  }
 ) => {
   const dispatch = useDispatch();
   const deleteTuitHandler = (id) => {
-    dispatch(deleteTuit(id));
+    dispatch(deleteTuitThunk(id));
   }
  return(
   <li className="list-group-item">
@@ -35,9 +42,12 @@ const TuitSummaryItem = (
         <AiOutlineClose className="float-end" href="javascript:void(0)" style={{fontSize: '20px'}} onClick={() => deleteTuitHandler(tuit._id)}/>
      </div>
      <div style={{display:"flex", justifyContent:"space-around"}}>
-                <div><a href="javascript:void(0)"><AiOutlineHeart style={{fontSize: '20px'}} /></a><span>{tuit.likes}</span></div>
-                <div><a href="javascript:void(0)"><AiOutlineComment className="" href="" style={{fontSize: '20px'}} /></a><span>{tuit.replies}</span></div>
-                <div><a href="javascript:void(0)"><AiOutlineRetweet className="" href="" style={{fontSize: '20px'}} /></a><span>{tuit.retuits}</span></div>
+                <div><a href="javascript:void(0)"><AiOutlineHeart className="text-danger" style={{fontSize: '20px'}} onClick={() => dispatch(updateTuitThunk({ ...tuit, likes: tuit.likes + 1 }))} /></a><span>{tuit.likes}</span></div>
+                <div><a href="javascript:void(0)"><AiOutlineComment className="" href="" style={{fontSize: '20px'}} onClick={() => dispatch(updateTuitThunk({ ...tuit, replies: tuit.replies + 1 }))} /></a><span>{tuit.replies}</span></div>
+                <div><a href="javascript:void(0)"><AiOutlineRetweet className="" href="" style={{fontSize: '20px'}} onClick={() => dispatch(updateTuitThunk({ ...tuit, retuits: tuit.retuits + 1 }))} /></a><span>{tuit.retuits}</span></div>
+      </div>
+      
+      <div>
       </div>
    </div>
   </li>
