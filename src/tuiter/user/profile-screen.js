@@ -55,7 +55,6 @@ function ProfileScreen() {
        }}/>
      </div></div>
    )}
-   <pre>{JSON.stringify(currentUser, null, 2)}</pre>
    <button
     onClick={handleLogout}>Logout</button>
    <button onClick={save}>Save  </button>

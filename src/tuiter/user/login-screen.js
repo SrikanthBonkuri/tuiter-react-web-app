@@ -40,8 +40,6 @@ function LoginScreen() {
            onClick={handleLogin}>
      Login
    </button>
-   <h4>Current User</h4>
-   <pre>{JSON.stringify(user, null, 2)}</pre>
   </div>
  );
 }
