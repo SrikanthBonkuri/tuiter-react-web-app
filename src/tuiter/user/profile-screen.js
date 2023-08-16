@@ -5,7 +5,6 @@ import { profileThunk, logoutThunk, updateUserThunk }
   from "../services/auth-thunks";
 function ProfileScreen() {
  const { currentUser } = useSelector((state) => state.user);
- console.log('curr', currentUser);
  //const [ profile, setProfile ] = useState(currentUser);
  //const [currentUser, setCurrentUser] = useState({});
  const [ profile, setProfile ] = useState(currentUser);
@@ -20,12 +19,9 @@ function ProfileScreen() {
     const { payload } = await dispatch(profileThunk());
     //setCurrentUser(payload);
     setProfile(payload);
-    console.log(payload);
-    console.log(currentUser);
-    console.log(profile);
   };
  useEffect(() => {
-   loadProfile();
+   //loadProfile();
  }, []);
 
  const handleLogout = async () => {
