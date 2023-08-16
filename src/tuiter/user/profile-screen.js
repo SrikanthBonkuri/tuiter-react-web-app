@@ -40,7 +40,6 @@ function ProfileScreen() {
    {profile && (<div>
      <div>
       <label>First Name</label>
-      <div>{profile.firstName}</div>
       <input type="text" value={profile.username}
        onChange={(event) => {
         const newProfile = {
