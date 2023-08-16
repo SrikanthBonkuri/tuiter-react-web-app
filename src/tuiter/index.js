@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router";
 import Nav from "../nav";
 import NavigationSidebar from "./navigation-sidebar";
 import BookmarksScreen from "./bookmarks-screen";
-import ProfileScreen from "./profile-screen";
+//import ProfileScreen from "./profile-screen";
 import HomeScreen from "./home-screen";
 import WhoToFollowList from "./who-to-follow-list";
 import ExploreScreen from "./explore-screen";
@@ -11,7 +11,7 @@ import tuitsReducer from "./reducers/tuits-reducer";
 import { configureStore } from '@reduxjs/toolkit';
 import {Provider} from "react-redux";
 
-//import ProfileScreen from "./user/profile";
+import ProfileScreen from "./user/profile-screen";
 import LoginScreen from "./user/login-screen";
 import RegisterScreen from "./user/register-screen";
 import authReducer from "./reducers/auth-reducer";
