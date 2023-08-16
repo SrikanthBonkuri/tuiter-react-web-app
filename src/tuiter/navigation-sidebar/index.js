@@ -16,6 +16,7 @@ const NavigationSidebar = () => {
      {!currentUser && <Link className="list-group" to="/tuiter/login">   Login   </Link>}
      {!currentUser && <Link className="list-group" to="/tuiter/register">Register</Link>}
      { currentUser && <Link className="list-group" to="/tuiter/profile"> Profile </Link>}
+     { currentUser && <Link className="list-group" to="/tuiter/users"> Users </Link>}
    </div>
  );
 };
