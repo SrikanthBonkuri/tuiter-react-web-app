@@ -4,10 +4,12 @@ import { useNavigate } from "react-router";
 import { profileThunk, logoutThunk, updateUserThunk }
   from "../services/auth-thunks";
 function ProfileScreen() {
- //const { currentUser } = useSelector((state) => state.user);
+ const { currentUser } = useSelector((state) => state.user);
+ console.log('curr', currentUser);
  //const [ profile, setProfile ] = useState(currentUser);
- const [currentUser, setCurrentUser] = useState({});
+ //const [currentUser, setCurrentUser] = useState({});
  const [ profile, setProfile ] = useState(currentUser);
+ console.log('prof', profile);
 
  const dispatch = useDispatch();
  const navigate = useNavigate();
@@ -16,8 +18,8 @@ function ProfileScreen() {
  const save = async () => { await dispatch(updateUserThunk(profile)); };
  const loadProfile = async () => {
     const { payload } = await dispatch(profileThunk());
-    setCurrentUser(payload);
-    //setProfile(payload);
+    //setCurrentUser(payload);
+    setProfile(payload);
     console.log(payload);
     console.log(currentUser);
     console.log(profile);
@@ -38,6 +40,7 @@ function ProfileScreen() {
    {profile && (<div>
      <div>
       <label>First Name</label>
+      <div>{profile.firstName}</div>
       <input type="text" value={profile.username}
        onChange={(event) => {
         const newProfile = {
