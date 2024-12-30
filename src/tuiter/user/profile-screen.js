@@ -4,10 +4,11 @@ import { useNavigate } from "react-router";
 import { profileThunk, logoutThunk, updateUserThunk }
   from "../services/auth-thunks";
 function ProfileScreen() {
- //const { currentUser } = useSelector((state) => state.user);
+ const { currentUser } = useSelector((state) => state.user);
  //const [ profile, setProfile ] = useState(currentUser);
- const [currentUser, setCurrentUser] = useState({});
+ //const [currentUser, setCurrentUser] = useState({});
  const [ profile, setProfile ] = useState(currentUser);
+ console.log('prof', profile);
 
  const dispatch = useDispatch();
  const navigate = useNavigate();
@@ -16,14 +17,11 @@ function ProfileScreen() {
  const save = async () => { await dispatch(updateUserThunk(profile)); };
  const loadProfile = async () => {
     const { payload } = await dispatch(profileThunk());
-    setCurrentUser(payload);
-    //setProfile(payload);
-    console.log(payload);
-    console.log(currentUser);
-    console.log(profile);
+    //setCurrentUser(payload);
+    setProfile(payload);
   };
  useEffect(() => {
-   loadProfile();
+   //loadProfile();
  }, []);
 
  const handleLogout = async () => {
@@ -57,7 +55,6 @@ function ProfileScreen() {
        }}/>
      </div></div>
    )}
-   <pre>{JSON.stringify(currentUser, null, 2)}</pre>
    <button
     onClick={handleLogout}>Logout</button>
    <button onClick={save}>Save  </button>

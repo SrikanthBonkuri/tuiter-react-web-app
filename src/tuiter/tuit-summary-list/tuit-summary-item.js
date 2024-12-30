@@ -33,7 +33,7 @@ const TuitSummaryItem = (
        <div>{tuit.userName} . {tuit.time}</div>
        <div className="fw-bolder">{tuit.topic}</div>
        <i class="fa fa-window-close" aria-hidden="true"></i>
-       <div>{tuit.title}</div>
+       <div>{tuit.tuit}</div>
      </div>
      <div className="col-3">
        <img width={70} className="float-end rounded-3" src={`/images/${tuit.image}`}/>
